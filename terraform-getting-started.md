@@ -59,7 +59,11 @@ Global options (use these before the subcommand, if any):
 
 With Terraform installed, let's dive right into it and start creating some infrastructure.
 
-Most guys find it easiest to create a new directory on there local machine and create Terraform configuration code inside it.
+## Write configuration
+
+The set of files used to describe infrastructure in Terraform is known as a Terraform configuration. You will write your first configuration to define a single Docker instance.
+
+Each Terraform configuration must be in its own working directory. Create a directory for your configuration.
 
 ```shell
 $ mkdir terraform-demo
