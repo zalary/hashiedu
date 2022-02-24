@@ -102,19 +102,139 @@ resource "docker_image" "nginx" {
 }
 ```
 
-Initialize Terraform with the `init` command. The AWS provider will be installed. 
+## Initialize Terraform
+Initializing a configuration directory downloads and installs the providers defined in the configuration. In this case we are configuring the `docker` provider which will run an NGINX server.
+
+Initialize Terraform with the `init` command.
 
 ```shell
 $ terraform init
 ```
 
-You shoud check for any errors. If it ran successfully, provision the resource with the `apply` command.
+
+A successful initialization should look similar to the below:
+
+```shell
+Initializing the backend...
+
+Initializing provider plugins...
+- Finding latest version of kreuzwerker/docker...
+- Installing kreuzwerker/docker v2.16.0...
+- Installed kreuzwerker/docker v2.16.0 (self-signed, key ID BD080C4571C6104C)
+
+Partner and community providers are signed by their developers.
+If you'd like to know more about provider signing, you can read about it here:
+https://www.terraform.io/docs/cli/plugins/signing.html
+
+Terraform has created a lock file .terraform.lock.hcl to record the provider
+selections it made above. Include this file in your version control repository
+so that Terraform can guarantee to make the same selections by default when
+you run "terraform init" in the future.
+
+Terraform has been successfully initialized!
+
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+```
+
+## Create Infrastructure
+Once you've successfully initialized Terraform, provision the resource with the `apply` command.
 
 ```shell
 $ terraform apply
 ```
 
-The command will take up to a few minutes to run and will display a message indicating that the resource was created.
+The command may take a few minutes to run, and will ask for confirmation before performing the apply.  Type `yes` at the prompt, then hit ENTER to proceed.
+
+```shell
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # docker_container.nginx will be created
+  + resource "docker_container" "nginx" {
+      + attach           = false
+      + bridge           = (known after apply)
+      + command          = (known after apply)
+      + container_logs   = (known after apply)
+      + entrypoint       = (known after apply)
+      + env              = (known after apply)
+      + exit_code        = (known after apply)
+      + gateway          = (known after apply)
+      + hostname         = (known after apply)
+      + id               = (known after apply)
+      + image            = (known after apply)
+      + init             = (known after apply)
+      + ip_address       = (known after apply)
+      + ip_prefix_length = (known after apply)
+      + ipc_mode         = (known after apply)
+      + log_driver       = (known after apply)
+      + logs             = false
+      + must_run         = true
+      + name             = "training"
+      + network_data     = (known after apply)
+      + read_only        = false
+      + remove_volumes   = true
+      + restart          = "no"
+      + rm               = false
+      + security_opts    = (known after apply)
+      + shm_size         = (known after apply)
+      + start            = true
+      + stdin_open       = false
+      + tty              = false
+
+      + healthcheck {
+          + interval     = (known after apply)
+          + retries      = (known after apply)
+          + start_period = (known after apply)
+          + test         = (known after apply)
+          + timeout      = (known after apply)
+        }
+
+      + labels {
+          + label = (known after apply)
+          + value = (known after apply)
+        }
+
+      + ports {
+          + external = 80
+          + internal = 80
+          + ip       = "0.0.0.0"
+          + protocol = "tcp"
+        }
+    }
+
+  # docker_image.nginx will be created
+  + resource "docker_image" "nginx" {
+      + id          = (known after apply)
+      + latest      = (known after apply)
+      + name        = "nginx:latest"
+      + output      = (known after apply)
+      + repo_digest = (known after apply)
+    }
+
+Plan: 2 to add, 0 to change, 0 to destroy.
+
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+  ```
+Once you confirm, the docker image will be created by Terraform.
+
+```shell
+docker_image.nginx: Creating...
+docker_image.nginx: Creation complete after 8s [id=sha256:c316d5a335a5cf324b0dc83b3da82d7608724769f6454f6d9a621f3ec2534a5anginx:latest]
+docker_container.nginx: Creating...
+docker_container.nginx: Creation complete after 1s [id=59e0dd6cc3d890a72ec7dc7af92a1bcc14435cc2efe5b6216e9c37cfafb70106]
+
+Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
+```
 
 Finally, destroy the infrastructure.
 
