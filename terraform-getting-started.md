@@ -2,6 +2,11 @@
 
 Terraform is the most popular langauge for defining and provisioning infrastructure as code (IaC).
 
+IaC tools allow you to manage infrastructure with configuration files rather than through a graphical user interface. IaC allows you to build, change, and manage your infrastructure in a safe, consistent, and repeatable way by defining resource configurations that you can version, reuse, and share.
+
+## Prerequistes
+- [Docker Desktop](https://docs.docker.com/desktop/#download-and-install) or [Docker Engine](https://docs.docker.com/engine/install/) for your environment
+
 To install Terraform, simply visit [Terraform.io](https://www.terraform.io/downloads.html) and download the compressed binary application executable file deliverable for your platform, machine or environment on which you like to run code and do development.
 
 With Terraform installed, let's dive right into it and start creating some infrastructure.
