@@ -7,7 +7,55 @@ IaC tools allow you to manage infrastructure with configuration files rather tha
 ## Prerequistes
 - [Docker Desktop](https://docs.docker.com/desktop/#download-and-install) or [Docker Engine](https://docs.docker.com/engine/install/) for your environment
 
-To install Terraform, simply visit [Terraform.io](https://www.terraform.io/downloads.html) and download the compressed binary application executable file deliverable for your platform, machine or environment on which you like to run code and do development.
+## Install Terraform
+To install Terraform, simply visit [Terraform.io](https://www.terraform.io/downloads.html), download and unzip the appropriate binary package or install via a package manager.  We have a more detailed [installation instructions](https://learn.hashicorp.com/tutorials/terraform/install-cli) in our [Terraform Learn Guide](https://learn.hashicorp.com/terraform).
+
+Once installed, you may need to add terraform to your path for [Unix/Linux](https://stackoverflow.com/questions/14637979/how-to-permanently-set-path-on-linux-unix) or [Windows](https://stackoverflow.com/questions/1618280/where-can-i-set-path-to-make-exe-on-windows).
+
+## Verify the Installation
+You can verify that Terraform is installed correctly by using `terraform -help` to list Terraform's available subcommands. You can also add any subcommand to `terraform -help` to learn more about what that command does and see any available options.
+
+```shell
+terraform -help  
+Usage: terraform [global options] <subcommand> [args]
+
+The available commands for execution are listed below.
+The primary workflow commands are given first, followed by
+less common or more advanced commands.
+
+Main commands:
+  init          Prepare your working directory for other commands
+  validate      Check whether the configuration is valid
+  plan          Show changes required by the current configuration
+  apply         Create or update infrastructure
+  destroy       Destroy previously-created infrastructure
+
+All other commands:
+  console       Try Terraform expressions at an interactive command prompt
+  fmt           Reformat your configuration in the standard style
+  force-unlock  Release a stuck lock on the current workspace
+  get           Install or upgrade remote Terraform modules
+  graph         Generate a Graphviz graph of the steps in an operation
+  import        Associate existing infrastructure with a Terraform resource
+  login         Obtain and save credentials for a remote host
+  logout        Remove locally-stored credentials for a remote host
+  output        Show output values from your root module
+  providers     Show the providers required for this configuration
+  refresh       Update the state to match remote systems
+  show          Show the current state or a saved plan
+  state         Advanced state management
+  taint         Mark a resource instance as not fully functional
+  test          Experimental support for module integration testing
+  untaint       Remove the 'tainted' state from a resource instance
+  version       Show the current Terraform version
+  workspace     Workspace management
+
+Global options (use these before the subcommand, if any):
+  -chdir=DIR    Switch to a different working directory before executing the
+                given subcommand.
+  -help         Show this help output, or the help for a specified subcommand.
+  -version      An alias for the "version" subcommand.
+```
 
 With Terraform installed, let's dive right into it and start creating some infrastructure.
 
