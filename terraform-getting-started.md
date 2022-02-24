@@ -344,3 +344,16 @@ Destroy complete! Resources: 2 destroyed.
 ```
 
 Congratulations, you've now provisioned and destroyed an NGINX webserver with Terraform and Docker.
+
+
+## Next Steps
+
+Now that you have created your first infrastructure using Terraform, find more advanced tutorials in the [Terraform Learn Guide](https://learn.hashicorp.com/terraform).
+
+For more detail on the concepts used in this tutorial:
+
+- Read about the Terraform configuration language in the [Terraform documentation](https://www.terraform.io/docs/language/index.html).
+- Learn more about Terraform [providers](https://www.terraform.io/docs/providers/index.html).
+- Find examples of other uses for Terraform in the documentation [use cases section](https://www.terraform.io/intro/use-cases.html).
+- Read the [Docker provider documentation](https://registry.terraform.io/providers/kreuzwerker/docker/latest) to learn more.
+- For more information about the terraform state command and subcommands for moving or removing resources from state, see the [CLI `stat`e command documentation](https://www.terraform.io/docs/cli/commands/state/index.html).
