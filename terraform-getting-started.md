@@ -94,7 +94,7 @@ resource "docker_container" "nginx" {
   name  = "training"
   ports {
     internal = 80
-    external = 80
+    external = 8000
   }
 }
 resource "docker_image" "nginx" {
