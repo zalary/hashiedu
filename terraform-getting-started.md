@@ -1,14 +1,14 @@
 # Getting Started with Terraform
 
-Terraform is the most popular langauge for defining and provisioning infrastructure as code (IaC).
+Terraform is the most popular language for defining and provisioning infrastructure as code (IaC).
 
 IaC tools allow you to manage infrastructure with configuration files rather than through a graphical user interface. IaC allows you to build, change, and manage your infrastructure in a safe, consistent, and repeatable way by defining resource configurations that you can version, reuse, and share.
 
-## Prerequistes
+## Prerequisites
 - [Docker Desktop](https://docs.docker.com/desktop/#download-and-install) or [Docker Engine](https://docs.docker.com/engine/install/) for your environment
 
 ## Install Terraform
-To install Terraform, simply visit [Terraform.io](https://www.terraform.io/downloads.html), download and unzip the appropriate binary package or install via a package manager.  We have a more detailed [installation instructions](https://learn.hashicorp.com/tutorials/terraform/install-cli) in our [Terraform Learn Guide](https://learn.hashicorp.com/terraform).
+To install Terraform, simply visit [Terraform.io](https://www.terraform.io/downloads.html), download and unzip the appropriate binary package or install via a package manager.  We have more detailed [installation instructions](https://learn.hashicorp.com/tutorials/terraform/install-cli) in our [Terraform Learn Guide](https://learn.hashicorp.com/terraform).
 
 Once installed, you may need to add terraform to your path for [Unix/Linux](https://stackoverflow.com/questions/14637979/how-to-permanently-set-path-on-linux-unix) or [Windows](https://stackoverflow.com/questions/1618280/where-can-i-set-path-to-make-exe-on-windows).
 
@@ -356,4 +356,4 @@ For more detail on the concepts used in this tutorial:
 - Learn more about Terraform [providers](https://www.terraform.io/docs/providers/index.html).
 - Find examples of other uses for Terraform in the documentation [use cases section](https://www.terraform.io/intro/use-cases.html).
 - Read the [Docker provider documentation](https://registry.terraform.io/providers/kreuzwerker/docker/latest) to learn more.
-- For more information about the terraform state command and subcommands for moving or removing resources from state, see the [CLI `stat`e command documentation](https://www.terraform.io/docs/cli/commands/state/index.html).
+- For more information about the terraform state command and subcommands for moving or removing resources from state, see the [CLI `state`  command documentation](https://www.terraform.io/docs/cli/commands/state/index.html).
